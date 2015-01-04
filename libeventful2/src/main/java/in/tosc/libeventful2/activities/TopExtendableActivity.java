@@ -16,16 +16,22 @@ public class TopExtendableActivity extends ActionBarActivity {
     //TODO: Get this data from configs, not hardcode
     String[] topSectionTitles = {"Section 1", "Section Two", "Sec 3"};
     int topSectionCount = 3;
-    PlaceHolderFragment[] topFragments;// = new PlaceHolderFragment[topSectionCount];
+//    PlaceHolderFragment[] topFragments;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        topFragments = new PlaceHolderFragment[]{
-                PlaceHolderFragment.newInstance(1),
-                PlaceHolderFragment.newInstance(2),
-                PlaceHolderFragment.newInstance(3)
-        };
+
+//        We are using the dynamic method generateFragment below to generate fragments in the fly instead of this
+//        topFragments = new PlaceHolderFragment[]{
+//                PlaceHolderFragment.newInstance(1),
+//                PlaceHolderFragment.newInstance(2),
+//                PlaceHolderFragment.newInstance(3)
+//        };
+    }
+
+    protected PlaceHolderFragment generateFragment (int position) {
+        return PlaceHolderFragment.newInstance(position + 1);
     }
 
     @Override
