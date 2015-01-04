@@ -56,13 +56,6 @@ public class TopSpinnertabsActivity extends TopExtendableActivity implements Act
 
 
     @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.top_activity, menu);
-        return true;
-    }
-
-    @Override
     public boolean onNavigationItemSelected(int position, long id) {
         // When the given dropdown item is selected, show its contents in the
         // container view.

@@ -72,14 +72,6 @@ public class TopSwipetabsActivity extends TopExtendableActivity implements Actio
         }
     }
 
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.top_activity, menu);
-        return true;
-    }
-
     @Override
     public void onTabSelected(ActionBar.Tab tab, FragmentTransaction fragmentTransaction) {
         // When the given tab is selected, switch to the corresponding page in
