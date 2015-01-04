@@ -34,6 +34,7 @@ public class TopNavdrawerActivity extends TopExtendableActivity
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        NavigationDrawerFragment.sTitles = topSectionTitles;
         setContentView(R.layout.activity_top_navdrawer);
 
         mNavigationDrawerFragment = (NavigationDrawerFragment)
@@ -56,17 +57,7 @@ public class TopNavdrawerActivity extends TopExtendableActivity
     }
 
     public void onSectionAttached(int number) {
-        switch (number) {
-            case 1:
-                mTitle = getString(R.string.title_section1);
-                break;
-            case 2:
-                mTitle = getString(R.string.title_section2);
-                break;
-            case 3:
-                mTitle = getString(R.string.title_section3);
-                break;
-        }
+        mTitle = topSectionTitles[number-1];
     }
 
     public void restoreActionBar() {

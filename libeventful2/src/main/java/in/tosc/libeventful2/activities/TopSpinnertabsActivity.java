@@ -39,11 +39,7 @@ public class TopSpinnertabsActivity extends TopExtendableActivity implements Act
                         actionBar.getThemedContext(),
                         android.R.layout.simple_list_item_1,
                         android.R.id.text1,
-                        new String[]{
-                                getString(R.string.title_section1),
-                                getString(R.string.title_section2),
-                                getString(R.string.title_section3),
-                        }),
+                        topSectionTitles),
                 this);
     }
 
