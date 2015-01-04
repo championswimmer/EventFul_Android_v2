@@ -5,6 +5,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import in.tosc.libeventful2.R;
 
@@ -37,6 +38,8 @@ public class PlaceHolderFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_top, container, false);
+        TextView label = (TextView) rootView.findViewById(R.id.section_label);
+        label.setText("OMGWTF" + getArguments().getInt(ARG_SECTION_NUMBER));
         return rootView;
     }
 }
