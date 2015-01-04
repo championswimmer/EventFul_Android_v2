@@ -46,7 +46,7 @@ public class TopNavdrawerActivity extends TopExtendableActivity
         // update the main content by replacing fragments
         FragmentManager fragmentManager = getSupportFragmentManager();
         fragmentManager.beginTransaction()
-                .replace(R.id.container, PlaceHolderFragment.newInstance(position + 1))
+                .replace(R.id.container, topFragments[position])
                 .commit();
     }
 

@@ -60,7 +60,7 @@ public class TopSpinnertabsActivity extends TopExtendableActivity implements Act
         // When the given dropdown item is selected, show its contents in the
         // container view.
         getSupportFragmentManager().beginTransaction()
-                .replace(R.id.container, PlaceHolderFragment.newInstance(position + 1))
+                .replace(R.id.container, topFragments[position])
                 .commit();
         return true;
     }
