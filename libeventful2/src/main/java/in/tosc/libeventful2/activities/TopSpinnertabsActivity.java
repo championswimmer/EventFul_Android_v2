@@ -1,7 +1,7 @@
 package in.tosc.libeventful2.activities;
 
-import android.support.v7.app.ActionBar;
 import android.os.Bundle;
+import android.support.v7.app.ActionBar;
 import android.widget.ArrayAdapter;
 
 import in.tosc.libeventful2.R;

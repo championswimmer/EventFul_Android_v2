@@ -1,12 +1,12 @@
 package in.tosc.libeventful2.activities;
 
-import java.util.Locale;
-
+import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
-import android.os.Bundle;
 import android.support.v4.view.ViewPager;
+
+import java.util.Locale;
 
 import in.tosc.libeventful2.R;
 
@@ -72,7 +72,6 @@ public class TopSwipeActivity extends TopExtendableActivity {
 
         }
     }
-
 
 
 }

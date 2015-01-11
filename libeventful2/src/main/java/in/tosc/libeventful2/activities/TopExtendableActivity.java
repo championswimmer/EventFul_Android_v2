@@ -30,7 +30,7 @@ public class TopExtendableActivity extends ActionBarActivity {
 //        };
     }
 
-    protected TopFragment generateFragment (int position) {
+    protected TopFragment generateFragment(int position) {
         return TopFragment.newInstance(position + 1);
     }
 
