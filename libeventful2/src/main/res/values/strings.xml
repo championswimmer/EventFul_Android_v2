@@ -14,5 +14,9 @@
     <string name="hello_world">Hello world!</string>
     <string name="title_activity_top_swipetabs">TopSwipetabsActivity</string>
     <string name="title_activity_top_spinnertabs">TopSpinnertabsActivity</string>
+    <string name="title_activity_main_dummy">MainDummyActivity</string>
+    <string name="title_activity_main_fullscreen">MainFullscreenActivity</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
 
 </resources>

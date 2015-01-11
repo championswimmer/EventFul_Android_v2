@@ -34,6 +34,19 @@
                 <action android:name="android.intent.action.MAIN" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".activities.MainDummyActivity"
+            android:label="@string/title_activity_main_dummy" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activities.MainFullscreenActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/title_activity_main_fullscreen"
+            android:theme="@style/FullscreenTheme" >
+        </activity>
     </application>
 
 </manifest>
