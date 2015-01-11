@@ -4,12 +4,10 @@ import android.support.v7.app.ActionBar;
 import android.support.v4.app.FragmentManager;
 import android.os.Bundle;
 import android.view.Menu;
-import android.view.MenuItem;
 import android.support.v4.widget.DrawerLayout;
 
 import in.tosc.libeventful2.fragments.NavigationDrawerFragment;
 import in.tosc.libeventful2.R;
-import in.tosc.libeventful2.fragments.PlaceHolderFragment;
 
 
 public class TopNavdrawerActivity extends TopExtendableActivity

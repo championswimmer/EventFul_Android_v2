@@ -6,7 +6,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import in.tosc.libeventful2.R;
-import in.tosc.libeventful2.fragments.PlaceHolderFragment;
+import in.tosc.libeventful2.fragments.TopFragment;
 
 /**
  * Created by championswimmer on 4/1/15.
@@ -16,22 +16,22 @@ public class TopExtendableActivity extends ActionBarActivity {
     //TODO: Get this data from configs, not hardcode
     String[] topSectionTitles = {"Section 1", "Section Two", "Sec 3"};
     int topSectionCount = 3;
-//    PlaceHolderFragment[] topFragments;
+//    TopFragment[] topFragments;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
 //        We are using the dynamic method generateFragment below to generate fragments in the fly instead of this
-//        topFragments = new PlaceHolderFragment[]{
-//                PlaceHolderFragment.newInstance(1),
-//                PlaceHolderFragment.newInstance(2),
-//                PlaceHolderFragment.newInstance(3)
+//        topFragments = new TopFragment[]{
+//                TopFragment.newInstance(1),
+//                TopFragment.newInstance(2),
+//                TopFragment.newInstance(3)
 //        };
     }
 
-    protected PlaceHolderFragment generateFragment (int position) {
-        return PlaceHolderFragment.newInstance(position + 1);
+    protected TopFragment generateFragment (int position) {
+        return TopFragment.newInstance(position + 1);
     }
 
     @Override
