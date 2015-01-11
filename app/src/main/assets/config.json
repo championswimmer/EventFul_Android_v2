@@ -1,0 +1,16 @@
+{
+  "configs": {
+    "top_navigation_type": "slider",
+    "top_navigation_fragments": [
+      {
+        "title" : "About",
+        "type" : "about"
+      },
+      {
+        "title" : "Contact Us",
+        "type": "contactus"
+      },
+      {}
+    ]
+  }
+}
