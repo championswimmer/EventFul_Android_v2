@@ -1,6 +1,5 @@
 {
-  "configs": {
-    "top_navigation_type": "slider",
+    "top_navigation_type": "SLIDING",
     "top_navigation_fragments": [
       {
         "title" : "About",
@@ -12,5 +11,4 @@
       },
       {}
     ]
-  }
 }
