@@ -7,6 +7,9 @@ import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.ImageView;
 
 import java.io.IOException;
@@ -20,6 +23,11 @@ public class MainDummyActivity extends ActionBarActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        getWindow().addFlags(View.SYSTEM_UI_FLAG_FULLSCREEN);
+        getWindow().addFlags(View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN);
+        getWindow().addFlags(View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY);
+        getWindow().addFlags(View.SYSTEM_UI_FLAG_IMMERSIVE);
         setContentView(R.layout.activity_main_dummy);
         ImageView splashScreen = (ImageView) findViewById(R.id.splash_screen);
         try {

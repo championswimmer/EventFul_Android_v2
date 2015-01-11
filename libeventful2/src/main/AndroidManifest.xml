@@ -36,6 +36,7 @@
         </activity>
         <activity
             android:name=".activities.MainDummyActivity"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen"
             android:label="@string/title_activity_main_dummy" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
