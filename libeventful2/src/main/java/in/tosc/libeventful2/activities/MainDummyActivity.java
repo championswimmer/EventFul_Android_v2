@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
-import android.view.View;
 import android.view.WindowManager;
 import android.widget.ImageView;
 
@@ -49,7 +48,7 @@ public class MainDummyActivity extends ActionBarActivity {
     public Intent gotoTopActivity () {
         Intent i;
         switch (EventfulConfig.topNavStyle) {
-            case NAV_DRAWER:
+            case NAVDRAWER:
                 i = new Intent(this, TopNavdrawerActivity.class);
                 break;
             case SPINNER:

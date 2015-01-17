@@ -7,7 +7,7 @@
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name" >
         <activity
-            android:name=".TopNavdrawerActivity"
+            android:name=".activities.TopNavdrawerActivity"
             android:label="@string/title_activity_top_navdrawer" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
