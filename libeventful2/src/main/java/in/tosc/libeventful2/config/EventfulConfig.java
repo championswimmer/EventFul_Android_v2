@@ -12,6 +12,8 @@ import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+import in.tosc.libeventful2.R;
+
 /**
  * Created by championswimmer on 12/1/15.
  */
@@ -38,7 +40,8 @@ public class EventfulConfig {
     public static boolean DEBUG = false;
     public static TopNavigationStyle topNavStyle;
     public static int numTopFrags = 0;
-    public static HashMap<Integer, TopFragmentType> topFragments;
+    public static TopFragmentType[] topFragmentTypes;
+    public static String[] topFragmentTitles;
 
     public static void load (Context c) throws IOException, JSONException {
         InputStream is = c.getAssets().open("config.json");
@@ -56,11 +59,12 @@ public class EventfulConfig {
         JSONArray topFragJSONArray = configJObj.getJSONArray("top_navigation_fragments");
         numTopFrags = topFragJSONArray.length();
         if(DEBUG) Log.d(TAG, "Number of top level fragments to be made  = " + numTopFrags);
-        topFragments = new HashMap<>(numTopFrags);
+        topFragmentTypes = new TopFragmentType[numTopFrags];
+        topFragmentTitles = new String[numTopFrags];
         for (int i = 0; i < numTopFrags; i++) {
-            TopFragmentType fragType = loadFragType(topFragJSONArray.getString(i));
+            TopFragmentType fragType = loadFragType(topFragJSONArray.getString(i), i);
             if (DEBUG) Log.d(TAG, i + " " + fragType);
-            topFragments.put(i, fragType);
+            topFragmentTypes[i] = fragType;
         }
     }
 
@@ -72,9 +76,23 @@ public class EventfulConfig {
         //default
         return TopNavigationStyle.NAVDRAWER;
     }
-    public static TopFragmentType loadFragType (String s) {
-        if (s.equalsIgnoreCase("ABOUT")) return TopFragmentType.ABOUT;
-        if (s.equalsIgnoreCase("CONTACT")) return TopFragmentType.CONTACT;
+    public static TopFragmentType loadFragType (String s, int i) {
+        if (s.equalsIgnoreCase("ABOUT")) {
+            try {
+                topFragmentTitles[i] = configJObj.getJSONObject("about").getString("title");
+            } catch (JSONException e) {
+                topFragmentTitles[i] = "About";
+            }
+            return TopFragmentType.ABOUT;
+        }
+        if (s.equalsIgnoreCase("CONTACT")) {
+            try {
+                topFragmentTitles[i] = configJObj.getJSONObject("contact").getString("title");
+            } catch (JSONException e) {
+                topFragmentTitles[i] = "Contact";
+            }
+            return TopFragmentType.CONTACT;
+        }
         //default
         return TopFragmentType.INVALID;
     }

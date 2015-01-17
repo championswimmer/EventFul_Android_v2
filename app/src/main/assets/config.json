@@ -1,8 +1,11 @@
 {
     "debug": "true",
-    "top_navigation_type": "SLIDING",
+    "top_navigation_type": "NAVDRAWER",
     "top_navigation_fragments": [ABOUT, CONTACTS],
     "about": {
         "title": "About Us"
+    },
+    "contact": {
+        "title": "Contact Us"
     }
 }

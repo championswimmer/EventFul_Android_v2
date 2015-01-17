@@ -6,6 +6,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import in.tosc.libeventful2.R;
+import in.tosc.libeventful2.config.EventfulConfig;
 import in.tosc.libeventful2.fragments.TopFragment;
 
 /**
@@ -13,21 +14,13 @@ import in.tosc.libeventful2.fragments.TopFragment;
  */
 public class TopExtendableActivity extends ActionBarActivity {
 
-    //TODO: Get this data from configs, not hardcode
-    String[] topSectionTitles = {"Section 1", "Section Two", "Sec 3"};
-    int topSectionCount = 3;
-//    TopFragment[] topFragments;
+    static String[] topSectionTitles = {"A", "B"};
+    static int topSectionCount = 2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-//        We are using the dynamic method generateFragment below to generate fragments in the fly instead of this
-//        topFragments = new TopFragment[]{
-//                TopFragment.newInstance(1),
-//                TopFragment.newInstance(2),
-//                TopFragment.newInstance(3)
-//        };
     }
 
     protected TopFragment generateFragment(int position) {

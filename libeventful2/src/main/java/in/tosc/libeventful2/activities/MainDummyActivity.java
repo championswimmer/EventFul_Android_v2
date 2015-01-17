@@ -10,6 +10,7 @@ import android.widget.ImageView;
 import org.json.JSONException;
 
 import java.io.IOException;
+import java.util.logging.Handler;
 
 import in.tosc.libeventful2.R;
 import in.tosc.libeventful2.config.EventfulConfig;
@@ -40,17 +41,16 @@ public class MainDummyActivity extends ActionBarActivity {
             e.printStackTrace();
         }
         splashScreen.setImageDrawable(splash);
+        //TODO: Insert code to provide delay on splash screen
 
         startActivity(gotoTopActivity());
+        finish();
 
     }
 
     public Intent gotoTopActivity () {
         Intent i;
         switch (EventfulConfig.topNavStyle) {
-            case NAVDRAWER:
-                i = new Intent(this, TopNavdrawerActivity.class);
-                break;
             case SPINNER:
                 i = new Intent(this, TopSpinnertabsActivity.class);
                 break;
@@ -60,6 +60,7 @@ public class MainDummyActivity extends ActionBarActivity {
             case SLIDING_TABS:
                 i = new Intent(this, TopSwipetabsActivity.class);
                 break;
+            case NAVDRAWER:
             default:
                 i = new Intent(this, TopNavdrawerActivity.class);
                 break;
