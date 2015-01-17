@@ -1,14 +1,8 @@
 {
+    "debug": "true",
     "top_navigation_type": "SLIDING",
-    "top_navigation_fragments": [
-      {
-        "title" : "About",
-        "type" : "about"
-      },
-      {
-        "title" : "Contact Us",
-        "type": "contactus"
-      },
-      {}
-    ]
+    "top_navigation_fragments": [ABOUT, CONTACTS],
+    "about": {
+        "title": "About Us"
+    }
 }
