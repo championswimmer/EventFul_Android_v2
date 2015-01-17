@@ -2,6 +2,7 @@ package in.tosc.libeventful2.activities;
 
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 
@@ -13,6 +14,7 @@ import in.tosc.libeventful2.fragments.TopFragment;
  * Created by championswimmer on 4/1/15.
  */
 public class TopExtendableActivity extends ActionBarActivity {
+    public static final String TAG = "TopExtendableActivity";
 
     static String[] topSectionTitles = {"A", "B"};
     static int topSectionCount = 2;
@@ -20,6 +22,9 @@ public class TopExtendableActivity extends ActionBarActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        if (EventfulConfig.DEBUG) Log.d(TAG,
+                EventfulConfig.numTopFrags + "" +
+                        EventfulConfig.topFragmentTitles.length + EventfulConfig.topFragmentTitles[0]);
 
     }
 

@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
+import android.util.Log;
 import android.view.WindowManager;
 import android.widget.ImageView;
 
@@ -16,6 +17,7 @@ import in.tosc.libeventful2.R;
 import in.tosc.libeventful2.config.EventfulConfig;
 
 public class MainDummyActivity extends ActionBarActivity {
+    public static final String TAG = "MainDummyActivity";
     Drawable splash;
 
 
@@ -27,11 +29,12 @@ public class MainDummyActivity extends ActionBarActivity {
 
         try {
             EventfulConfig.load(getApplicationContext());
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (JSONException e) {
+        } catch (IOException | JSONException e) {
             e.printStackTrace();
         }
+        if (EventfulConfig.DEBUG) Log.d(TAG,
+                EventfulConfig.numTopFrags + "" +
+                        EventfulConfig.topFragmentTitles.length + EventfulConfig.topFragmentTitles[0]);
 
 
         ImageView splashScreen = (ImageView) findViewById(R.id.splash_screen);

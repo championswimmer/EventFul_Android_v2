@@ -39,9 +39,9 @@ public class EventfulConfig {
     // Config data storage variables
     public static boolean DEBUG = false;
     public static TopNavigationStyle topNavStyle;
-    public static int numTopFrags = 0;
+    public static int numTopFrags = 2;
     public static TopFragmentType[] topFragmentTypes;
-    public static String[] topFragmentTitles;
+    public static String[] topFragmentTitles = {"A", "B"};
 
     public static void load (Context c) throws IOException, JSONException {
         InputStream is = c.getAssets().open("config.json");
