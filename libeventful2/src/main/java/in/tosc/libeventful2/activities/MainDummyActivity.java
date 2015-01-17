@@ -5,6 +5,7 @@ import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.util.Log;
+import android.view.View;
 import android.view.WindowManager;
 import android.widget.ImageView;
 
@@ -27,16 +28,6 @@ public class MainDummyActivity extends ActionBarActivity {
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_main_dummy);
 
-        try {
-            EventfulConfig.load(getApplicationContext());
-        } catch (IOException | JSONException e) {
-            e.printStackTrace();
-        }
-        if (EventfulConfig.DEBUG) Log.d(TAG,
-                EventfulConfig.numTopFrags + "" +
-                        EventfulConfig.topFragmentTitles.length + EventfulConfig.topFragmentTitles[0]);
-
-
         ImageView splashScreen = (ImageView) findViewById(R.id.splash_screen);
         try {
             splash = Drawable.createFromStream(getAssets().open("splash.png"), null);
@@ -46,8 +37,14 @@ public class MainDummyActivity extends ActionBarActivity {
         splashScreen.setImageDrawable(splash);
         //TODO: Insert code to provide delay on splash screen
 
-        startActivity(gotoTopActivity());
-        finish();
+        splashScreen.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(gotoTopActivity());
+                finish();
+
+            }
+        });
 
     }
 

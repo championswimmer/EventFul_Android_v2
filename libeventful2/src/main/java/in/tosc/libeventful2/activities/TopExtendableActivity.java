@@ -16,8 +16,8 @@ import in.tosc.libeventful2.fragments.TopFragment;
 public class TopExtendableActivity extends ActionBarActivity {
     public static final String TAG = "TopExtendableActivity";
 
-    static String[] topSectionTitles = {"A", "B"};
-    static int topSectionCount = 2;
+    public static String[] topSectionTitles = {"About", "Contact Us"};
+    public static int topSectionCount = 2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,6 +26,11 @@ public class TopExtendableActivity extends ActionBarActivity {
                 EventfulConfig.numTopFrags + "" +
                         EventfulConfig.topFragmentTitles.length + EventfulConfig.topFragmentTitles[0]);
 
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
     }
 
     protected TopFragment generateFragment(int position) {

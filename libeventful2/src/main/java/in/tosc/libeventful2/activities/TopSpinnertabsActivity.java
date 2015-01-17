@@ -2,12 +2,15 @@ package in.tosc.libeventful2.activities;
 
 import android.os.Bundle;
 import android.support.v7.app.ActionBar;
+import android.util.Log;
 import android.widget.ArrayAdapter;
 
 import in.tosc.libeventful2.R;
+import in.tosc.libeventful2.config.EventfulConfig;
 
 public class TopSpinnertabsActivity extends TopExtendableActivity implements ActionBar.OnNavigationListener {
 
+    public static final String TAG = "TopSpinnertabsActivity";
     /**
      * The serialization (saved instance state) Bundle key representing the
      * current dropdown position.
@@ -23,6 +26,15 @@ public class TopSpinnertabsActivity extends TopExtendableActivity implements Act
         final ActionBar actionBar = getSupportActionBar();
         actionBar.setDisplayShowTitleEnabled(false);
         actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_LIST);
+
+        if (EventfulConfig.DEBUG) Log.d(TAG,
+                EventfulConfig.numTopFrags + "" +
+                        EventfulConfig.topFragmentTitles.length + EventfulConfig.topFragmentTitles[0]);
+
+        if (EventfulConfig.DEBUG) Log.d(TAG,
+                topSectionCount + "" +
+                        topSectionTitles.length + topSectionTitles[0]);
+
 
         // Set up the dropdown list navigation in the action bar.
         actionBar.setListNavigationCallbacks(
