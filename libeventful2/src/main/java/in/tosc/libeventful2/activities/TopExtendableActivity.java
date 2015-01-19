@@ -9,6 +9,7 @@ import android.view.MenuItem;
 import in.tosc.libeventful2.R;
 import in.tosc.libeventful2.config.EventfulConfig;
 import in.tosc.libeventful2.fragments.TopFragment;
+import in.tosc.libeventful2.fragments.about.AboutOnePageFragment;
 
 /**
  * Created by championswimmer on 4/1/15.
@@ -34,6 +35,10 @@ public class TopExtendableActivity extends ActionBarActivity {
     }
 
     protected TopFragment generateFragment(int position) {
+        if (EventfulConfig.topFragmentTypes[position] == EventfulConfig.TopFragmentType.ABOUT) {
+            if (EventfulConfig.DEBUG) Log.d(TAG, "creating about fragment");
+            return AboutOnePageFragment.newInstance();
+        }
         return TopFragment.newInstance(position + 1);
     }
 

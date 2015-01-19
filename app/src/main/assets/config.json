@@ -3,9 +3,21 @@
     "top_navigation_type": "SPINNER",
     "top_navigation_fragments": [ABOUT, CONTACTS],
     "about": {
-        "title": "About Us"
+        "title": "About Us",
+        "summary": "About Us text goes here"
     },
     "contact": {
-        "title": "Contact Us"
+        "title": "Contact Us",
+        "format": "LIST",
+        "items": [
+        {
+        "name": "Arnav Gupta",
+        "email": "c@tosc.in"
+        },
+        {
+        "name": "Saurav Tomar",
+        "email": "s@tosc.in"
+        }
+        ]
     }
 }

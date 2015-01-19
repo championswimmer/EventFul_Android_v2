@@ -66,6 +66,9 @@ public class EventfulConfig {
             if (DEBUG) Log.d(TAG, i + " " + fragType);
             topFragmentTypes[i] = fragType;
         }
+
+        //Load about details
+        EventfulConfigAbout.loadAbout(configJObj.getJSONObject("about"));
     }
 
     public static TopNavigationStyle loadTopNavStyle (String s) {

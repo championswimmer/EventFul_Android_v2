@@ -9,6 +9,4 @@ import in.tosc.libeventful2.activities.MainDummyActivity;
  */
 public class MainActivity extends MainDummyActivity {
 
-
-
 }
